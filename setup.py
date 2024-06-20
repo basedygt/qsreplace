@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from os import path
 
 pwd = path.abspath(path.dirname(__file__))
 with io.open(path.join(pwd, 'README.md'), encoding='utf-8') as readme:
