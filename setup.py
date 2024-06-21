@@ -17,6 +17,7 @@ setup(
     author_email='basedygt@gmail.com',
     url='https://github.com/basedygt/qsreplace',
     packages=find_packages(),
+    py_modules=['qsreplace'],
     keywords=['qsreplace', 'url editor', 'params editor'],
     install_requires=['urllib3'],
 )
