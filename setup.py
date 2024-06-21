@@ -8,7 +8,7 @@ with io.open(path.join(pwd, 'README.md'), encoding='utf-8') as readme:
 
 setup(
     name='qsreplace',
-    version='0.0.2.post1',
+    version='0.0.2.post2',
     description='A utility to replace query parameters in URLs',
     long_description=desc,
     long_description_content_type='text/markdown',
