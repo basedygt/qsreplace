@@ -2,11 +2,8 @@
 
 from urllib.parse import urlparse, urlencode, parse_qs, urlunparse
 
-def qsreplace(hosts_file, payloads_lst, edit_base_url=True):
+def qsreplace(url_lst, payloads_lst, edit_base_url=True):
     replaced_urls_lst = []
-    
-    with open(hosts_file, "r") as f:
-        url_lst = f.read().splitlines()
         
     for url in url_lst:
         parsed_url = urlparse(url)
