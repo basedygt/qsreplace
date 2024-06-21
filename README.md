@@ -18,7 +18,7 @@ After installing `qsreplace`, you can use it in your Python scripts. Here's how 
 from qsreplace import qsreplace
 
 # Example usage
-url_lst = ["https://example.com", "https://example.com/?param=value", "https://example.com/?param=value1"]
+url_lst = ["https://example.com", "https://example.com/?param=value"]
 payloads = ["new_value", "another_value"]
 
 replaced_urls = qsreplace(url_lst, payloads, edit_base_url=True)
