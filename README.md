@@ -38,7 +38,7 @@ https://example.com/?param=another_value
 
 In the example above:
 - `example_hosts.txt` should contain a list of URLs, each on a new line.
-- `payloads` is a list of values that will replace query parameters in the URLs read from `hosts_file`.
+- `payloads` is a list of values that will replace query parameters in the URLs read from `hosts_file`
 - `edit_base_url` tells qsreplace whether or not to append payload to base urls i.e. which doesn't contain any parameters in it.
 
 
