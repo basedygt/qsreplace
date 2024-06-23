@@ -1,7 +1,5 @@
-#!/bin/python3
-
 from urllib.parse import urlparse, urlencode, parse_qs, urlunparse
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 
 def qsreplace(url_lst, payloads_lst, edit_base_url=True, url_encode=True):
     replaced_urls_lst = []
@@ -27,6 +25,8 @@ def qsreplace(url_lst, payloads_lst, edit_base_url=True, url_encode=True):
                         new_query_params[param_name] = payload
                         new_query = urlencode(new_query_params, doseq=True)
                         new_url = urlunparse(parsed_url._replace(query=new_query))
+                        if not url_encode:
+                            new_url = unquote(new_url)
                         replaced_urls_lst.append(new_url)
 
     return replaced_urls_lst
