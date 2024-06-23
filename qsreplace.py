@@ -1,8 +1,9 @@
 #!/bin/python3
 
 from urllib.parse import urlparse, urlencode, parse_qs, urlunparse
+from urllib.parse import quote
 
-def qsreplace(url_lst, payloads_lst, edit_base_url=True):
+def qsreplace(url_lst, payloads_lst, edit_base_url=True, url_encode=True):
     replaced_urls_lst = []
         
     for url in url_lst:
@@ -13,6 +14,8 @@ def qsreplace(url_lst, payloads_lst, edit_base_url=True):
                 if not url.endswith('/'):
                     url += '/'  # Ensure URL ends with a slash
                 for payload in payloads_lst:
+                    if url_encode:
+                        payload = quote(payload)
                     replaced_urls_lst.append(f"{url}{payload}")  # Append payloads directly to the URL
         else:
             query_params = parse_qs(parsed_url.query, keep_blank_values=True)
